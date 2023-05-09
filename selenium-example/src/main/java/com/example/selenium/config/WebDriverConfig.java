@@ -18,7 +18,10 @@ public class WebDriverConfig {
     System.setProperty("webdriver.http.factory", "jdk-http-client");
 
     ChromeOptions chromeOptions = new ChromeOptions();
-    chromeOptions.setCapability("ignoreProtectedModeSettings", true);
+    chromeOptions.addArguments("headless"); // headless 모드(브라우저 창을 열지 않고 백그라운드에서 실행하는 모드)
+    chromeOptions.addArguments("window-size=1920,1080"); // 브라우저 창 크기를 1920x1080로 설정
+    chromeOptions.addArguments("disable-cache"); // 캐시 비활성화
+    chromeOptions.addArguments("disable-gpu"); // GPU 가속 비활성화
     return new ChromeDriver(chromeOptions);
   }
 }

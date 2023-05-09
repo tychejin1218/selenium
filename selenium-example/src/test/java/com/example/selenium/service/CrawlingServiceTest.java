@@ -9,7 +9,6 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ActiveProfiles;
-import org.springframework.util.StringUtils;
 
 @Slf4j
 @SpringBootTest
@@ -24,10 +23,10 @@ class CrawlingServiceTest {
   void testGetProblemHtml() {
 
     // Given
-    String url = "";
-    String id = "";
-    String pw = "";
-    String problemId = "";
+    String url = "https://d-qbank2.daekyo.co.kr/";
+    String id = "DD0001";
+    String pw = "1234";
+    String problemId = "445799";
 
     // When
     String problemHtml = crawlingService.getProblemHtml(url, id, pw, problemId);

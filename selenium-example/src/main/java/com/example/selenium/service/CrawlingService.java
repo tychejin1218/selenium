@@ -26,11 +26,11 @@ public class CrawlingService {
   public String getProblemHtml(String url, String id, String pw, String problemId) {
 
     WebDriver webDriver = webDriverConfig.chromeDriver();
-    webDriver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
+    webDriver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
 
     // 메인
     webDriver.get(url);
-    webDriver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+    webDriver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
     // 로그인
     webDriver.findElement(By.id("f_id")).sendKeys(id);
@@ -55,7 +55,6 @@ public class CrawlingService {
 
     // 문항 HTML
     String problemHtml = webDriver.findElement(By.id("chobank")).getAttribute("innerHTML");
-
     return problemHtml;
   }
 }
